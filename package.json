@@ -1,0 +1,46 @@
+{
+  "name": "vue_todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:watch": "NODE_ENV=development webpack-dev-server --color",
+    "dev:server": "nodemon server/www",
+    "build": "NODE_ENV=production webpack --progress"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "IE >= 9"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "morgan": "^1.9.1",
+    "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "axios": "^0.18.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.6.2",
+    "vue-template-compiler": "^2.6.6",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
