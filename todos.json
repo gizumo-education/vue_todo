@@ -1,1 +1,22 @@
-{"todos":[{"title":"aadsfasdfasdf","detail":"asdfasdfasdfasdfasdff","id":1,"completed":false},{"title":"ads","detail":"d;lkjhgfghjklmnbvbnm,nbnm,nbnmasdfqe","id":2,"completed":false},{"title":"asdfa","detail":"asdfasdfasdf","id":3,"completed":false}]}
+{
+  "todos": [
+    {
+      "title": "1つ目のTODOタイトル",
+      "detail": "1つ目のTODO詳細",
+      "id": 1,
+      "completed": false
+    },
+    {
+      "title": "2つ目のTODOタイトル",
+      "detail": "2つ目のTODO詳細",
+      "id": 2,
+      "completed": false
+    },
+    {
+      "title": "3つ目のTODOタイトル",
+      "detail": "3つ目のTODO詳細",
+      "id": 3,
+      "completed": false
+    }
+  ]
+}
