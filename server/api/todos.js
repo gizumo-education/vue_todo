@@ -100,7 +100,6 @@ export default {
     const targetTodo = data.todos.find((todo) => {
       return todo.id === parseInt(id, 10);
     });
-    console.log(targetTodo);
 
     if (!targetTodo) {
       return res.status(404).send(`ID ${id} のアイテムは存在しません。`);
