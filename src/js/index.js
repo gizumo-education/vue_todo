@@ -8,16 +8,5 @@ import myApp from 'Components/todo/';
 
 new Vue({
   el: '#app',
-  //////////////////////////////
-  // // importしたオブジェクトを渡す
-  // // この方法はJITコンパイルにしか対応してない
-  // components: {
-  //   'root-cmp': App
-  // },
-  // template: `<root-cmp />`,
-  //////////////////////////////
-
-  ////////////////////////////// 下記でも同じ
-  render: h => h(myApp)
-  //////////////////////////////
+  render: h => h(myApp),
 });

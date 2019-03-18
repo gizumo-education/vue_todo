@@ -3,6 +3,7 @@ import path from 'path';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
+
 console.log('nodeEnv ==> ', nodeEnv);
 console.log('isDev ==> ', isDev);
 console.log(path.resolve(__dirname, 'src/js/components'));
@@ -14,19 +15,19 @@ const config = {
   mode: nodeEnv,
   devtool: isDev ? 'source-map' : 'eval',
   resolve: {
-    extensions: ['.js', '.json', '.vue'],
+    extensions: ['.vue', '.js', '.json'],
     alias: {
       Components: `${src}/js/components`,
     }
   },
-  plugins: [new VueLoaderPlugin()],
-  // webpack-dev-server
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   devServer: {
     open: true,
     inline: true,
     hot: true,
     port: 8080,
-    watchContentBase: true,
     contentBase: dist
   },
   entry: {
@@ -34,17 +35,17 @@ const config = {
   },
   output: {
     filename: 'js/[name].js',
-    path: `${dist}/`,
+    path: dist,
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(jsx?|vue)$/,
-      //   enforce: 'pre',
-      //   exclude: /node_modules/,
-      //   loader: 'eslint-loader',
-      //   options: { failOnError: false }
-      // },
+      {
+        test: /\.(jsx?|vue)$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: { failOnError: false }
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -58,12 +59,8 @@ const config = {
       {
         test: /\.(css|sass|scss)$/,
         use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader"
-          },
+          'style-loader',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
