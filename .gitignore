@@ -1,7 +1,5 @@
 node_modules
 public/js
-src/js/components/**
-!src/js/components/test.vue
 
 .DS_Store
 

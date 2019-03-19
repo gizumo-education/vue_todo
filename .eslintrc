@@ -38,13 +38,7 @@
     ],
     "import/no-named-as-default": "off",
     "no-trailing-spaces": "error",
-    "vue/singleline-html-element-content-newline": [
-      "error",
-      {
-        "ignoreWhenNoAttributes": true,
-        "ignoreWhenEmpty": true
-      }
-    ],
+    "vue/singleline-html-element-content-newline": "off",
     "vue/max-attributes-per-line": [
       "error",
       {
