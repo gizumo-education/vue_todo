@@ -31,68 +31,23 @@
         </form>
 
         <div class="todos">
-          <template v-if="false">
-            <ul class="todos__list">
-              <li>
-                <div class="todos__inner">
-                  <div class="todos__completed">
-                    <button class="todos__completed__btn" type="button">未完了</button>
-                  </div>
-                  <form
-                    v-if="false"
-                    id="editorTodo"
-                    class="todos__desc"
-                  >
-                    <div class="todos__desc__title">
-                      <input
-                        type="text"
-                        name="title"
-                      >
-                    </div>
-                    <div class="todos__desc__detail">
-                      <textarea
-                        name="detail"
-                        rows="3"
-                      />
-                    </div>
-                  </form>
-                  <div v-else class="todos__desc">
-                    <h2 class="todos__desc__title">タイトル</h2>
-                    <p class="todos__desc__detail">内容</p>
-                  </div>
-                  <div class="todos__btn">
-                    <template v-if="false">
-                      <button
-                        class="todos__btn__edit"
-                        form="editorTodo"
-                        type="submit"
-                        name="editButton"
-                      >
-                        確定
-                      </button>
-                    </template>
-                    <template v-else>
-                      <button
-                        class="todos__btn__edit"
-                        type="button"
-                      >
-                        編集
-                      </button>
-                    </template>
-                    <button
-                      class="todos__btn__delete"
-                      type="button"
-                    >
-                      削除
-                    </button>
-                  </div>
+          <ul class="todos__list">
+            <li>
+              <div class="todos__inner">
+                <div class="todos__completed">
+                  <button class="todos__completed__btn" type="button">未完了</button>
                 </div>
-              </li>
-            </ul>
-          </template>
-          <template v-else>
-            <p class="todos__empty">やることリストには何も登録されていません。</p>
-          </template>
+                <div class="todos__desc">
+                  <h2 class="todos__desc__title">ここにはTodoのタイトルが入ります</h2>
+                  <p class="todos__desc__detail">ここにはTodoの内容が入ります</p>
+                </div>
+                <div class="todos__btn">
+                  <button class="todos__btn__edit" type="button">編集</button>
+                  <button class="todos__btn__delete" type="button">削除</button>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </main>
 
@@ -112,8 +67,8 @@ export default {
       todos: [
         /* {
           id: 1,
-          title: 'ここにはタイトルが入ります',
-          detail: 'ここには詳細な内容が入ります',
+          title: 'タイトル 01',
+          detail: '詳細 01',
           completed: false,
         }, */
       ],
@@ -302,7 +257,7 @@ export default {
       font-size: 12px;
     }
     &__edit {
-      background-color: #148cfa;
+      background-color: #07C4D7;
     }
     &__delete {
       margin-top: 5px;
