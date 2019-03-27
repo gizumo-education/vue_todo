@@ -17,7 +17,8 @@ const config = {
   resolve: {
     extensions: ['.vue', '.js', '.json'],
     alias: {
-      Components: `${src}/js/components`,
+      TodoComponents: `${src}/js/todo/components`,
+      TodoRouterComponents: `${src}/js/todoRouter/components,`
     }
   },
   plugins: [

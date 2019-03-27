@@ -1,6 +1,6 @@
 node_modules
 public/js
-src/js/components/Todo/sample_index.vue
+src/js/todo/components/sample_index.vue
 
 .DS_Store
 

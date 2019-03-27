@@ -2,8 +2,8 @@ import Vue from 'vue';
 
 import '../scss/global.scss';
 
-import myApp from 'Components/test';
-// import myApp from 'Components/Todo';
+import myApp from './first';
+// import myApp from 'TodoComponents';
 
 new Vue({
   el: '#app',

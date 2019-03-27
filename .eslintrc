@@ -13,7 +13,8 @@
     "import/resolver": {
       "alias": {
         map: [
-          ["Components", "./src/js/components"]
+          ["TodoComponents", "./src/js/todo/components"],
+          ["TodoRouterComponents", "./src/js/todoRouter/components"]
         ],
         extensions: ['.vue', '.js', '.jsx', '.json']
       }
