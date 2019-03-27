@@ -1,9 +1,19 @@
 import Vue from 'vue';
+// import VueRouter from 'vue-router';
+
+// import routes from 'TodoRouterDir/routes';
 
 import '../scss/global.scss';
 
 import myApp from './first';
-// import myApp from 'TodoComponents';
+// import myApp from 'TodoDir';
+// import myApp from 'TodoRouterDir';
+
+// Vue.use(VueRouter);
+// const router = new VueRouter({
+//   routes,
+//   mode: 'history',
+// });
 
 new Vue({
   el: '#app',
@@ -12,4 +22,6 @@ new Vue({
   // render: function (createElement) {
   //   return createElement(myApp)
   // }
+
+  // router,
 });

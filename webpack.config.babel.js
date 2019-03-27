@@ -17,8 +17,8 @@ const config = {
   resolve: {
     extensions: ['.vue', '.js', '.json'],
     alias: {
-      TodoComponents: `${src}/js/todo/components`,
-      TodoRouterComponents: `${src}/js/todoRouter/components,`
+      TodoDir: `${src}/js/todo`,
+      TodoRouterDir: `${src}/js/todoRouter`,
     }
   },
   plugins: [
@@ -29,7 +29,8 @@ const config = {
     inline: true,
     hot: true,
     port: 8080,
-    contentBase: dist
+    contentBase: dist,
+    // historyApiFallback: true,
   },
   entry: {
     index: `${src}/js/index.js`

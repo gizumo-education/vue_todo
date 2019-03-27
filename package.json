@@ -23,7 +23,8 @@
     "express": "^4.16.4",
     "http-errors": "^1.7.2",
     "morgan": "^1.9.1",
-    "vue": "^2.6.6"
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.7",
