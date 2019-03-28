@@ -21,6 +21,16 @@ npm run dev:watch
 npm run dev:server
 ```
 
+## Vue Todo (初期状態)
+
+クローンしたての状態では、下記テキストが表示されます。
+
+```
+Welcome to Vue Todo Lesson!!
+
+This is Lesson for Beginner of Frontend Engineer.
+```
+
 ## Vue Todo (No routing)
 
 Todoの確認には、下記のようにファイルの変更をしましょう。  
@@ -92,6 +102,7 @@ new Vue({
 
   router,
 });
+
 ```
 
 ### `webpack.config.babel.js`
