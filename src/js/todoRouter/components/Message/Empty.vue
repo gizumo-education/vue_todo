@@ -1,32 +1,13 @@
 <template lang="html">
-  <p class="empty">{{ message }}</p>
+  <p class="empty">{{ emptyMessage }}</p>
 </template>
 
 <script>
 export default {
   props: {
-    filter: {
+    emptyMessage: {
       type: String,
-      default: 'all',
-    },
-  },
-  data() {
-    return {
-      message: 'やることリストには何も登録されていません。',
-    };
-  },
-  created() {
-    this.setMessage();
-  },
-  methods: {
-    setMessage() {
-      if (this.filter === 'completed') {
-        this.message = '完了済みのやることリストはありません。';
-      } else if (this.filter === 'incomplete') {
-        this.message = '未完了のやることリストはありません。';
-      } else {
-        this.message = 'やることリストには何も登録されていません。';
-      }
+      default: '',
     },
   },
 };

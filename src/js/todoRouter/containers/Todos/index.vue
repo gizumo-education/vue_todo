@@ -2,7 +2,7 @@
   <app-wrapper :todos="todos">
     <app-navi />
     <app-register
-      v-if="filter !== 'completed'"
+      v-if="filter !== 'completedTodo'"
       :todo-id="targetTodo.id"
       :todo-title.sync="targetTodo.title"
       :todo-detail.sync="targetTodo.detail"
@@ -27,7 +27,6 @@
     <template v-slot:todos>
       <app-list
         v-if="filteredTodos.length"
-        :filter="filter"
         :todos="filteredTodos"
         @changeCompleted="changeCompleted"
         @showEditor="showEditor"
@@ -35,7 +34,7 @@
       />
       <app-empty-message
         v-else
-        :filter="filter"
+        :empty-message="emptyMessage"
       />
     </template>
   </app-wrapper>
@@ -62,7 +61,7 @@ export default {
   data() {
     return {
       todos: [],
-      filter: 'all',
+      filter: '',
       filteredTodos: [],
       targetTodo: {
         id: null,
@@ -71,6 +70,7 @@ export default {
         completed: '',
       },
       errorMessage: '',
+      emptyMessage: '',
     };
   },
   computed: {
@@ -90,21 +90,35 @@ export default {
   created() {
     axios.get('http://localhost:3000/api/todos/').then(({ data }) => {
       this.todos = data.todos.reverse();
+      this.setFilter();
     }).catch((err) => {
       this.showError(err);
+      this.setFilter();
     });
   },
   methods: {
     setFilter() {
-      if (this.$route.path === '/completed') {
-        this.filter = 'completed';
+      const routeName = this.$route.name;
+      this.filter = routeName;
+      if (routeName === 'completedTodo') {
         this.filteredTodos = this.todos.filter(todo => todo.completed);
-      } else if (this.$route.path === '/incomplete') {
-        this.filter = 'incomplete';
+      } else if (routeName === 'incompleteTodo') {
         this.filteredTodos = this.todos.filter(todo => !todo.completed);
       } else {
-        this.filter = 'all';
         this.filteredTodos = this.todos;
+      }
+      this.setEmptyMessage();
+    },
+    setEmptyMessage() {
+      const filteredTodos = this.filteredTodos;
+      if (filteredTodos.length) {
+        this.emptyMessage = '';
+      } else if (this.filter === 'completedTodo') {
+        this.emptyMessage = '完了済みのやることリストはありません。';
+      } else if (this.filter === 'incompleteTodo') {
+        this.emptyMessage = '未完了のやることリストはありません。';
+      } else {
+        this.emptyMessage = 'やることリストには何も登録されていません。';
       }
     },
     initTargetTodo() {

@@ -21,10 +21,6 @@ export default {
     appListItem: ListItem,
   },
   props: {
-    filter: {
-      type: String,
-      default: 'all',
-    },
     filteredTodos: {
       type: Array,
       default: () => [],
