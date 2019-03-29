@@ -2,7 +2,7 @@
   <app-wrapper :todos="todos">
     <app-navi />
     <app-register
-      v-if="filter !== 'completedTodo'"
+      v-if="filterTodo !== 'completedTodo'"
       :todo-id="targetTodo.id"
       :todo-title.sync="targetTodo.title"
       :todo-detail.sync="targetTodo.detail"
@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       todos: [],
-      filter: '',
+      filterTodo: '',
       filteredTodos: [],
       targetTodo: {
         id: null,
@@ -99,7 +99,7 @@ export default {
   methods: {
     setFilter() {
       const routeName = this.$route.name;
-      this.filter = routeName;
+      this.filterTodo = routeName;
       if (routeName === 'completedTodo') {
         this.filteredTodos = this.todos.filter(todo => todo.completed);
       } else if (routeName === 'incompleteTodo') {
@@ -113,9 +113,9 @@ export default {
       const filteredTodos = this.filteredTodos;
       if (filteredTodos.length) {
         this.emptyMessage = '';
-      } else if (this.filter === 'completedTodo') {
+      } else if (this.filterTodo === 'completedTodo') {
         this.emptyMessage = '完了済みのやることリストはありません。';
-      } else if (this.filter === 'incompleteTodo') {
+      } else if (this.filterTodo === 'incompleteTodo') {
         this.emptyMessage = '未完了のやることリストはありません。';
       } else {
         this.emptyMessage = 'やることリストには何も登録されていません。';
