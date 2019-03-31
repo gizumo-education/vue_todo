@@ -2,6 +2,7 @@ import Vue from 'vue';
 // import VueRouter from 'vue-router';
 
 // import routes from 'TodoRouterDir/routes';
+// import store from 'TodoRouterDir/store';
 
 import '../scss/global.scss';
 
@@ -24,4 +25,5 @@ new Vue({
   // }
 
   // router,
+  // store,
 });

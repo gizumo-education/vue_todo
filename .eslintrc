@@ -10,7 +10,8 @@
       "alias": {
         map: [
           ["TodoDir", "./src/js/todo"],
-          ["TodoRouterDir", "./src/js/todoRouter"]
+          ["TodoRouterDir", "./src/js/todoRouter"],
+          ["SampleTodoVuexDir", "./src/js/todoRouterVuex_sample",]
         ],
         extensions: ['.vue', '.js', '.jsx', '.json']
       }
