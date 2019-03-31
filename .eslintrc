@@ -35,6 +35,10 @@
     ],
     "import/no-named-as-default": "off",
     "no-trailing-spaces": "error",
+    "no-param-reassign": ["error", {
+      "props": true,
+      "ignorePropertyModificationsFor": ["state"]
+    }],
     "vue/singleline-html-element-content-newline": "off",
     "vue/max-attributes-per-line": [
       "error",
