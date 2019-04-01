@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div class="wrapper">
     <div class="inner">
       <app-header />

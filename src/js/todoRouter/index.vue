@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div>
     <div class="page-description">
       <p>Todo with Routing of vue-router</p>

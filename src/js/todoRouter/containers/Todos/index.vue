@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <app-wrapper :todos="todos">
     <app-navi />
     <app-register
