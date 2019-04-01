@@ -1,8 +1,8 @@
 <template lang="html">
   <footer class="footer">
     <p>全項目数: {{ todos.length }}</p>
-    <p>完了済: {{ todos.filter(todo => todo.completed).length }}</p>
     <p>未完了: {{ todos.filter(todo => !todo.completed).length }}</p>
+    <p>完了済: {{ todos.filter(todo => todo.completed).length }}</p>
   </footer>
 </template>
 
