@@ -11,11 +11,11 @@
       @editTodo="editTodo"
     />
     <!--
-      :title="targetTodo.title"
-      @update:title="targetTodo.title = $event"
+      :todo-title="targetTodo.title"
+      @update:todoTitle="targetTodo.title = $event"
 
-      :detail="targetTodo.detail"
-      @update:detail="targetTodo.detail = $event"
+      :todo-detail="targetTodo.detail"
+      @update:todoDetail="targetTodo.detail = $event"
 
       :props名="dataの値" => 子へ渡すprops
       @update:props名="dataの値 = 上の「propsに指定したい値」" => 子のイベント購読
@@ -107,13 +107,11 @@ export default {
       } else {
         this.filteredTodos = this.todos;
       }
-      this.setEmptyMessage();
+
+      if (!this.filteredTodos.length) this.setEmptyMessage();
     },
     setEmptyMessage() {
-      const { filteredTodos } = this;
-      if (filteredTodos.length) {
-        this.emptyMessage = '';
-      } else if (this.todoFilter === 'completedTodo') {
+      if (this.todoFilter === 'completedTodo') {
         this.emptyMessage = '完了済みのやることリストはありません。';
       } else if (this.todoFilter === 'incompleteTodo') {
         this.emptyMessage = '未完了のやることリストはありません。';
