@@ -19,6 +19,7 @@ const config = {
     alias: {
       TodoDir: `${src}/js/todo`,
       TodoRouterDir: `${src}/js/todoRouter`,
+      TodoVuexDir: `${src}/js/todoVuex`,
     }
   },
   plugins: [

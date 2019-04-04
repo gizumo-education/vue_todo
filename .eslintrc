@@ -11,7 +11,7 @@
         map: [
           ["TodoDir", "./src/js/todo"],
           ["TodoRouterDir", "./src/js/todoRouter"],
-          ["SampleTodoVuexDir", "./src/js/todoRouterVuex_sample",]
+          ["TodoVuexDir", "./src/js/todoVuex",]
         ],
         extensions: ['.vue', '.js', '.jsx', '.json']
       }

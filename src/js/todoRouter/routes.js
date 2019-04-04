@@ -2,17 +2,17 @@ import Todos from 'TodoRouterDir/containers/Todos';
 
 const routes = [
   {
-    name: 'allTodo',
+    name: 'allTodos',
     path: '/',
     component: Todos,
   },
   {
-    name: 'completedTodo',
+    name: 'completedTodos',
     path: '/completed',
     component: Todos,
   },
   {
-    name: 'incompleteTodo',
+    name: 'incompleteTodos',
     path: '/incomplete',
     component: Todos,
   },

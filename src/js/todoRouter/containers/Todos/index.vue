@@ -2,7 +2,7 @@
   <app-wrapper :todos="todos">
     <app-navi />
     <app-register
-      v-if="todoFilter !== 'completedTodo'"
+      v-if="todoFilter !== 'completedTodos'"
       :todo-id="targetTodo.id"
       :todo-title.sync="targetTodo.title"
       :todo-detail.sync="targetTodo.detail"
@@ -100,9 +100,9 @@ export default {
     setFilter() {
       const routeName = this.$route.name;
       this.todoFilter = routeName;
-      if (routeName === 'completedTodo') {
+      if (routeName === 'completedTodos') {
         this.filteredTodos = this.todos.filter(todo => todo.completed);
-      } else if (routeName === 'incompleteTodo') {
+      } else if (routeName === 'incompleteTodos') {
         this.filteredTodos = this.todos.filter(todo => !todo.completed);
       } else {
         this.filteredTodos = this.todos;
