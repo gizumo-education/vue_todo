@@ -1,6 +1,7 @@
 node_modules
 public/js
 src/js/todo/sample_index.vue
+src/js/todoVuex_sample
 
 .DS_Store
 

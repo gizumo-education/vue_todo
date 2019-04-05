@@ -20,6 +20,7 @@ const config = {
       TodoDir: `${src}/js/todo`,
       TodoRouterDir: `${src}/js/todoRouter`,
       TodoVuexDir: `${src}/js/todoVuex`,
+      VuexSample: `${src}/js/todoVuex_sample`,
     }
   },
   plugins: [
