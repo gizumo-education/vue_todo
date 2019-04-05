@@ -14,14 +14,14 @@ import myApp from './first';
 
 // Vue.use(VueRouter);
 // const router = new VueRouter({
-//   routes,
+//   routes: routes,
 //   mode: 'history',
 // });
 
 new Vue({
   el: '#app',
-  // router,
-  // store,
+  // router: router,
+  // store: store,
   render: h => h(myApp),
   // render: h => h(myApp), は↓の書き方を短くしたもの
   // render: function (createElement) {
