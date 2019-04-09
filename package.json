@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:watch": "NODE_ENV=development webpack-dev-server --color",
-    "dev:server": "nodemon server/www",
-    "build": "NODE_ENV=production webpack --progress"
+    "dev:watch:win": "cross-env NODE_ENV=development webpack-dev-server --color",
+    "dev:watch:mac": "NODE_ENV=development webpack-dev-server --color",
+    "build:win": "cross-env NODE_ENV=production webpack --progress",
+    "build:mac": "NODE_ENV=production webpack --progress",
+    "dev:server": "nodemon server/www"
   },
   "browserslist": [
     "last 2 version",
@@ -23,6 +25,7 @@
     "express": "^4.16.4",
     "http-errors": "^1.7.2",
     "morgan": "^1.9.1",
+    "nodemon": "^1.18.11",
     "vue": "^2.6.6",
     "vue-router": "^3.0.2",
     "vuex": "^3.1.0"
@@ -31,6 +34,7 @@
     "autoprefixer": "^9.4.7",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",

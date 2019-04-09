@@ -19,28 +19,16 @@ const store = new Vuex.Store({
     emptyMessage: 'やることリストは空です。',
   },
   getters: {
-    completedTodos: function(state) {
-      return state.todos.filter((todo) => {
-        return todo.completed;
-      })
-    },
-    incompleteTodos: function(state) {
-      return state.todos.filter((todo) => {
-        return !todo.completed;
-      })
-    },
-    completedTodosLength: function(state, getters) {
-      return getters.completedTodos.length;
-    },
-    incompleteTodosLength: function(state, getters) {
-      return getters.incompleteTodos.length;
-    },
+    completedTodos(state) => state.todos.filter((todo) => todo.completed),
+    incompleteTodos(state) => state.todos.filter((todo) => !todo.completed),
+    completedTodosLength(state, getters) => getters.completedTodos.length,
+    incompleteTodosLength(state, getters) => getters.incompleteTodos.length;,
   },
   mutations: {
-    setTodoFilter: function(state, routeName) {
+    setTodoFilter(state, routeName) {
       state.todoFilter = routeName;
     },
-    setEmptyMessage: function(state, routeName) {
+    setEmptyMessage(state, routeName) {
       if (routeName === 'completedTodos') {
         let emptyMessage = '完了済みのやることリストはありません。';
       } else if (routeName === 'incompleteTodos') {
@@ -49,7 +37,7 @@ const store = new Vuex.Store({
         let emptyMessage = 'やることリストには何も登録されていません。';
       }
     },
-    initTargetTodo: function(state) {
+    initTargetTodo(state) {
       state.targetTodo = {
         id: null,
         title: '',
@@ -57,10 +45,10 @@ const store = new Vuex.Store({
         completed: false,
       };
     },
-    hideError: function(state) {
+    hideError(state) {
       state.errorMessage = 'エラーが起きました。';
     },
-    showError: function(state, payload) {
+    showError(state, payload) {
       if (payload) {
         const errorMessage = payload.data;
       } else {
@@ -70,16 +58,16 @@ const store = new Vuex.Store({
     updateTargetTodo(state, { name, value }) {
       state.targetTodo[name] = value;
     },
-    getTodos: function(state, payload) {
+    getTodos(state, payload) {
       state.todos = payload.reverse();
     },
-    addTodo: function(state, payload) {
+    addTodo(state, payload) {
       state.todos.unshift(payload);
     },
-    showEditor: function(state, payload) {
+    showEditor(state, payload) {
       state.targetTodo = Object.assign({}, payload);
     },
-    editTodo: function(state, payload) {
+    editTodo(state, payload) {
       state.todos = state.todos.map((todoItem) => {
         if (todoItem.id === payload.id) return payload;
         return todoItem;
@@ -87,23 +75,23 @@ const store = new Vuex.Store({
     },
   },
   actions: {
-    setTodoFilter: function({ commit }, routeName) {
+    setTodoFilter({ commit }, routeName) {
       commit('setTodoFilter', routeName);
     },
-    setEmptyMessage: function({ commit }, routeName) {
+    setEmptyMessage({ commit }, routeName) {
       commit('setEmptyMessage', routeName);
     },
     updateTargetTodo({ commit }, { name, value }) {
       commit('updateTargetTodo', { name, value });
     },
-    getTodos: function({ commit }) {
-      axios.get('http://localhost:3000/api/todos/').then(function({ data }) {
+    getTodos({ commit }) {
+      axios.get('http://localhost:3000/api/todos/').then(({ data }) => {
         commit('getTodos', data.todos);
-      }).catch(function(err) {
+      }).catch((err) => {
         commit('showError', err.response);
       });
     },
-    addTodo: function({ commit, state }) {
+    addTodo({ commit, state }) {
       if (!state.targetTodo.title || !state.targetTodo.detail) {
         commit({
           type: 'showError',
@@ -115,28 +103,28 @@ const store = new Vuex.Store({
         title: state.targetTodo.title,
         detail: state.targetTodo.detail,
       });
-      axios.post('http://localhost:3000/api/todos/', postTodo).then(function({ data }) {
+      axios.post('http://localhost:3000/api/todos/', postTodo).then(({ data }) => {
         commit('addTodo', data);
-      }).catch(function(err) {
+      }).catch((err) => {
         commit('showError', err.response);
       });
       commit('initTargetTodo');
     },
-    changeCompleted: function({ commit }, payload) {
+    changeCompleted({ commit }, payload) {
       const targetTodo = Object.assign({}, payload);
       axios.patch(`http://localhost:3000/api/todos/${targetTodo.id}`, {
         completed: !targetTodo.completed,
-      }).then(function({ data }) {
+      }).then(({ data }) => {
         commit('editTodo', data);
-      }).catch(function(err) {
+      }).catch((err) => {
         commit('showError', err.response);
       });
       commit('initTargetTodo');
     },
-    showEditor: function({ commit }, payload) {
+    showEditor({ commit }, payload) {
       commit('showEditor', payload);
     },
-    editTodo: function({ commit, state }) {
+    editTodo({ commit, state }) {
       const targetTodo = state.todos.find(todo => todo.id === state.targetTodo.id);
       if (
         targetTodo.title === state.targetTodo.title
@@ -148,17 +136,17 @@ const store = new Vuex.Store({
       axios.patch(`http://localhost:3000/api/todos/${state.targetTodo.id}`, {
         title: state.targetTodo.title,
         detail: state.targetTodo.detail,
-      }).then(function({ data }) {
+      }).then(({ data }) => {
         commit('editTodo', data);
-      }).catch(function(err) {
+      }).catch((err) => {
         commit('showError', err.response);
       });
       commit('initTargetTodo');
     },
-    deleteTodo: function({ commit }, payload) {
-      axios.delete(`http://localhost:3000/api/todos/${payload}`).then(function({ data }) {
+    deleteTodo({ commit }, payload) {
+      axios.delete(`http://localhost:3000/api/todos/${payload}`).then(({ data }) => {
         // 処理
-      }).catch(function(err) {
+      }).catch((err) => {
         // 処理
       });
       // 必要があれば処理
