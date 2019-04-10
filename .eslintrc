@@ -8,13 +8,13 @@
   "settings": {
     "import/resolver": {
       "alias": {
-        map: [
+        "map": [
           ["TodoDir", "./src/js/todo"],
           ["TodoRouterDir", "./src/js/todoRouter"],
           ["TodoVuexDir", "./src/js/todoVuex"],
           ["VuexSample", "./src/js/todoVuex_sample"]
         ],
-        extensions: ['.vue', '.js', '.jsx', '.json']
+        "extensions": ['.vue', '.js', '.jsx', '.json']
       }
     }
   },
