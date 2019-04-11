@@ -19,10 +19,10 @@ const store = new Vuex.Store({
     emptyMessage: 'やることリストは空です。',
   },
   getters: {
-    completedTodos(state) => state.todos.filter((todo) => todo.completed),
-    incompleteTodos(state) => state.todos.filter((todo) => !todo.completed),
-    completedTodosLength(state, getters) => getters.completedTodos.length,
-    incompleteTodosLength(state, getters) => getters.incompleteTodos.length;,
+    completedTodos: (state) => state.todos.filter((todo) => todo.completed),
+    incompleteTodos: (state) => state.todos.filter((todo) => !todo.completed),
+    completedTodosLength: (state, getters) => getters.completedTodos.length,
+    incompleteTodosLength: (state, getters) => getters.incompleteTodos.length;,
   },
   mutations: {
     setTodoFilter(state, routeName) {
