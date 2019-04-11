@@ -32,10 +32,10 @@
         @click="(todoId === null) ? $emit('addTodo') : $emit('editTodo')"
       >
         <template v-if="todoId === null">
-          登録する
+          <span>登録する</span>
         </template>
         <template v-else>
-          変更する
+          <span>変更する</span>
         </template>
       </button>
     </div>

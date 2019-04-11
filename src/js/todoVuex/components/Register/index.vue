@@ -27,10 +27,10 @@
         @click="(targetTodo.id === null) ? addTodo() : editTodo()"
       >
         <template v-if="targetTodo.id === null">
-          登録する
+          <span>登録する</span>
         </template>
         <template v-else>
-          変更する
+          <span>変更する</span>
         </template>
       </button>
     </div>

@@ -7,8 +7,12 @@
           type="button"
           @click="changeCompleted(todo)"
         >
-          <template v-if="todo.completed">完了</template>
-          <template v-else>未完了</template>
+          <template v-if="todo.completed">
+            <span>完了</span>
+          </template>
+          <template v-else>
+            <span>未完了</span>
+          </template>
         </button>
       </div>
       <div class="todo__item__desc">
