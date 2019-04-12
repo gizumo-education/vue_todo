@@ -110,8 +110,8 @@ const store = new Vuex.Store({
       });
       commit('initTargetTodo');
     },
-    changeCompleted({ commit }, payload) {
-      const targetTodo = Object.assign({}, payload);
+    changeCompleted({ commit }, todo) {
+      const targetTodo = Object.assign({}, todo);
       axios.patch(`http://localhost:3000/api/todos/${targetTodo.id}`, {
         completed: !targetTodo.completed,
       }).then(({ data }) => {
@@ -121,8 +121,8 @@ const store = new Vuex.Store({
       });
       commit('initTargetTodo');
     },
-    showEditor({ commit }, payload) {
-      commit('showEditor', payload);
+    showEditor({ commit }, todo) {
+      commit('showEditor', todo);
     },
     editTodo({ commit, state }) {
       const targetTodo = state.todos.find(todo => todo.id === state.targetTodo.id);
@@ -143,8 +143,8 @@ const store = new Vuex.Store({
       });
       commit('initTargetTodo');
     },
-    deleteTodo({ commit }, payload) {
-      axios.delete(`http://localhost:3000/api/todos/${payload}`).then(({ data }) => {
+    deleteTodo({ commit }, todoId) {
+      axios.delete(`http://localhost:3000/api/todos/${todoId}`).then(({ data }) => {
         // 処理
       }).catch((err) => {
         // 処理
