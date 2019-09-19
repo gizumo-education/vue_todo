@@ -32,7 +32,9 @@ export default {
       return todo.id === parseInt(id, 10);
     });
     if (!targetTodo) {
-      return res.status(404).send(`ID ${id} のアイテムは存在しません。`);
+      return res
+        .status(404)
+        .send({ message: `ID ${id} のアイテムは存在しません。` });
     }
 
     return res.send(targetTodo);
@@ -44,7 +46,9 @@ export default {
     // detail    require
     // completedはこちらで付与
     if (!req.body.title || !req.body.detail) {
-      return res.status(400).send({ message: 'タイトルと内容はどちらも必須項目です。' });
+      return res
+        .status(400)
+        .send({ message: 'タイトルと内容はどちらも必須項目です。' });
     }
     const data = fetchTodos();
     const idNum = data.todos.length ? data.todos[data.todos.length - 1].id + 1 : 1;
@@ -62,7 +66,9 @@ export default {
     let { title, detail, completed } = req.body;
     const data = fetchTodos();
     if (typeof completed !== 'boolean' && completed) {
-      return res.status(400).send('完了してるかどうかは、Boolean（true/false）しか受け付けません。');
+      return res
+        .status(400)
+        .send({ message: '完了してるかどうかは、Boolean（true/false）しか受け付けません。' });
     }
 
     let targetTodo = data.todos.find((todo) => {
@@ -70,7 +76,9 @@ export default {
     });
 
     if (!targetTodo) {
-      return res.status(404).send(`ID ${id} のアイテムは存在しません。`);
+      return res
+        .status(404)
+        .send({ message: `ID ${id} のアイテムは存在しません。` });
     }
 
     Object.assign(targetTodo, {
@@ -102,7 +110,9 @@ export default {
     });
 
     if (!targetTodo) {
-      return res.status(404).send(`ID ${id} のアイテムは存在しません。`);
+      return res
+        .status(404)
+        .send({ message: `ID ${id} のアイテムは存在しません。` });
     }
 
     const newTodos = data.todos.filter((todo) => {
