@@ -65,12 +65,12 @@ export default {
   data() {
     return {
       todos: [
-        /* {
-          id: 1,
-          title: 'タイトル 01',
-          detail: '詳細 01',
-          completed: false,
-        }, */
+        // {
+        //   id: 1,
+        //   title: 'タイトル 01',
+        //   detail: '詳細 01',
+        //   completed: false,
+        // },
       ],
     };
   },
