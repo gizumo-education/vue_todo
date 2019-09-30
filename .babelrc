@@ -3,6 +3,15 @@
     [
       "@babel/preset-env",
       {
+        // "debug": true,
+        "targets": {
+          "node": "current",
+          "browsers": [
+            "last 1 versions",
+            "> 1%",
+            "ie >= 11"
+          ]
+        },
         "useBuiltIns": "usage",
         "corejs": 3
       }

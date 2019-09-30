@@ -75,13 +75,7 @@ const config = {
             options: {
               sourceMap: true,
               plugins: [
-                require('autoprefixer')({
-                  grid: true,
-                  browsers: [
-                    'IE >= 9',
-                    'last 2 versions'
-                  ]
-                })
+                require('autoprefixer')({ grid: true })
               ]
             }
           },
