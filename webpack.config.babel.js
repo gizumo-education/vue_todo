@@ -1,4 +1,4 @@
-const { VueLoaderPlugin } = require("vue-loader");
+import { VueLoaderPlugin } from 'vue-loader';
 import path from 'path';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
@@ -63,11 +63,17 @@ const config = {
       {
         test: /\.(css|sass|scss)$/,
         use: [
-          'style-loader',
-          'css-loader',
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
           {
             loader: 'postcss-loader',
             options: {
+              sourceMap: true,
               plugins: [
                 require('autoprefixer')({
                   grid: true,
