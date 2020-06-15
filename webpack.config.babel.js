@@ -32,7 +32,8 @@ const config = {
     hot: true,
     port: 8080,
     contentBase: dist,
-    // historyApiFallback: true,
+    // history APIのフォールバックのサポートを有効にする
+    historyApiFallback: true,
   },
   entry: {
     index: `${src}/js/index.js`
@@ -43,13 +44,13 @@ const config = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(jsx?|vue)$/,
-      //   enforce: 'pre',
-      //   exclude: /node_modules/,
-      //   loader: 'eslint-loader',
-      //   options: { failOnError: false }
-      // },
+      {
+        test: /\.(jsx?|vue)$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: { failOnError: false }
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,

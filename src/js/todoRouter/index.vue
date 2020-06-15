@@ -3,6 +3,7 @@
     <div class="page-description">
       <p>Todo with Routing of vue-router</p>
     </div>
+    <!-- ↓router-viewは、routesで設定したパスに一致するコンポーネントを描画するコンポーネント-->
     <router-view />
   </div>
 </template>

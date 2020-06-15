@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="todo__link">
-    <!-- toプロパティに遷移先のパスをバインド -->
     <router-link class="todo__link__item" to="/">すべて表示</router-link>
     <router-link class="todo__link__item" to="/incomplete">未完了のみ表示</router-link>
     <router-link class="todo__link__item" to="/completed">完了済のみ表示</router-link>

@@ -70,7 +70,7 @@ export default {
     rows: function() {
       const num = this.targetTodo.detail.split('\n').length;
       return (num > 3) ? num : 3;
-    },
+    }
   },
   methods: {
     addTodo: function() {
