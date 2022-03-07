@@ -45,6 +45,7 @@ export default {
     },
     title: {
       get: function() {
+        this.$store.dispatch('hideError');
         return this.$store.state.targetTodo.title;
       },
       set: function(value) {
@@ -57,6 +58,7 @@ export default {
     },
     detail: {
       get: function() {
+        this.$store.dispatch('hideError');
         return this.$store.state.targetTodo.detail;
       },
       set: function(value) {

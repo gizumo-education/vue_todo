@@ -1,7 +1,8 @@
 <template lang="html">
   <app-wrapper>
+    <app-nav />
     <app-register v-if="todoFilter !== 'completedTodos'" />
-    <app-error-message />
+    <app-error-message v-show="errorMessage" />
     <template v-slot:todos>
       <app-list v-if="todos.length" :todos="todos" />
       <app-empty-message />
@@ -14,10 +15,12 @@ import Wrapper from 'TodoVuexDir/components/Wrapper';
 import { ErrorMessage, EmptyMessage } from 'TodoVuexDir/components/Message';
 import Register from 'TodoVuexDir/components/Register';
 import List from 'TodoVuexDir/components/List';
+import Nav from 'TodoVuexDir/components/Navi';
 
 export default {
   components: {
     appWrapper: Wrapper,
+    appNav: Nav,
     appErrorMessage: ErrorMessage,
     appEmptyMessage: EmptyMessage,
     appList: List,
@@ -39,6 +42,7 @@ export default {
   },
   watch: {
     todos: function(todos) {
+      this.$store.dispatch('hideError');
       if (!todos.length) this.$store.dispatch('setEmptyMessage', this.todoFilter);
     },
     $route: function(to) {
