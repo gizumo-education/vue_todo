@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Wrapper from 'TodoVuexDir/components/Wrapper';
+import Wrapper from 'TodoVuexDir/components/Wrapper/index.vue';
 import { ErrorMessage, EmptyMessage } from 'TodoVuexDir/components/Message';
-import Register from 'TodoVuexDir/components/Register';
-import List from 'TodoVuexDir/components/List';
+import Register from 'TodoVuexDir/components/Register/index.vue';
+import List from 'TodoVuexDir/components/List/index.vue';
 
 export default {
   components: {

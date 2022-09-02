@@ -1,4 +1,4 @@
-import Todos from 'TodoVuexDir/containers/Todos';
+import Todos from 'TodoVuexDir/containers/Todos/index.vue';
 
 const routes = [
   {

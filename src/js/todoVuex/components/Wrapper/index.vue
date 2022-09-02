@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Header from 'TodoVuexDir/components/Header';
-import Footer from 'TodoVuexDir/components/Footer';
+import Header from 'TodoVuexDir/components/Header/index.vue';
+import Footer from 'TodoVuexDir/components/Footer/index.vue';
 
 export default {
   components: {

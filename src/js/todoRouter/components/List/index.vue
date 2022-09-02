@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ListItem from 'TodoRouterDir/components/ListItem';
+import ListItem from 'TodoRouterDir/components/ListItem/index.vue';
 
 export default {
   components: {
