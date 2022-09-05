@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="error">
     <p class="error__text">{{ errorMessage }}</p>
   </div>

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <header class="header">
     <h1 class="header__title">やることリスト</h1>
   </header>

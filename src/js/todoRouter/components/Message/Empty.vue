@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <p class="empty">{{ emptyMessage }}</p>
 </template>
 

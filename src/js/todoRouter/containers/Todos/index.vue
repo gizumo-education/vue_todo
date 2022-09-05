@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <app-wrapper :todos="todos">
     <app-navi />
     <app-register
@@ -7,8 +7,8 @@
       :todo-title.sync="targetTodo.title"
       :todo-detail.sync="targetTodo.detail"
       :todo-rows="rows"
-      @addTodo="addTodo"
-      @editTodo="editTodo"
+      @add-todo="addTodo"
+      @edit-todo="editTodo"
     />
     <!--
       :todo-title="targetTodo.title"
@@ -28,9 +28,9 @@
       <app-list
         v-if="filteredTodos.length"
         :todos="filteredTodos"
-        @changeCompleted="changeCompleted"
-        @showEditor="showEditor"
-        @deleteTodo="deleteTodo"
+        @change-completed="changeCompleted"
+        @show-editor="showEditor"
+        @delete-todo="deleteTodo"
       />
       <app-empty-message
         v-else

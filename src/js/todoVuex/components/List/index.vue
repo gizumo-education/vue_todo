@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <ul class="todos__list">
     <app-list-item
       v-for="todo in todos"

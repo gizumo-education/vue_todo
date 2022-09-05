@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <footer class="footer">
     <p>全項目数: {{ todos.length }}</p>
     <p>未完了: {{ incompleteTodosLength }}</p>

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <li :class="['todo__item', todo.completed ? 'is-completed' : '']">
     <div class="todo__item__inner">
       <div class="todo__item__completed">

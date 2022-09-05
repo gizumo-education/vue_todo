@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="todo__wrapper">
     <div class="todo__inner">
       <header class="header">

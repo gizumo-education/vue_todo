@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <app-wrapper>
     <app-register v-if="todoFilter !== 'completedTodos'" />
     <app-error-message />

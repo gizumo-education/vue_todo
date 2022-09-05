@@ -47,7 +47,8 @@
           "max": 1
         }
       }
-    ]
+    ],
+    "vue/custom-event-name-casing": ["error", "kebab-case"]
   },
   "env": {
     "browser": true,
