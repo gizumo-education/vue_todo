@@ -17,13 +17,13 @@ npm i
 インストールしたら、下記コマンドで**クライアント側のソースコードのビルド**と**API用のサーバーの立ち上げ**をします。  
 コマンドは別タブで実行する必要があります。
 
+### クライアント側の開発サーバー立ち上げ
 ```
-# クライアント側のソースコードのビルド
-npm run dev:watch
+npm run dev
 ```
 
+### API用のサーバーの立ち上げ
 ```
-# API用のサーバーの立ち上げ
 npm run dev:server
 ```
 
@@ -56,29 +56,28 @@ import Vue from 'vue';
 
 import '../scss/global.scss';
 
-// import myApp from './first';
-import myApp from 'TodoDir';
-// import myApp from 'TodoRouterDir';
-// import myApp from 'TodoVuexDir';
-// import myApp from 'VuexSample';
+// import myApp from './first/index.vue';
+import myApp from 'TodoDir/index.vue';
+// import myApp from 'TodoRouterDir/index.vue';
+// import myApp from 'TodoVuexDir/index.vue';
+// import myApp from 'VuexSample/index.vue';
 
 // Vue.use(VueRouter);
 // const router = new VueRouter({
-//   routes: routes,
+//   routes,
 //   mode: 'history',
 // });
 
 new Vue({
   el: '#app',
-  // router: router,
-  // store: store,
+  // router,
+  // store,
   render: h => h(myApp),
   // render: h => h(myApp), は↓の書き方を短くしたもの
   // render: function (createElement) {
   //   return createElement(myApp)
   // }
 });
-
 ```
 
 
@@ -100,11 +99,11 @@ import routes from 'TodoRouterDir/routes';
 
 import '../scss/global.scss';
 
-// import myApp from './first';
-// import myApp from 'TodoDir';
-import myApp from 'TodoRouterDir';
-// import myApp from 'TodoVuexDir';
-// import myApp from 'VuexSample';
+// import myApp from './first/index.vue';
+// import myApp from 'TodoDir/index.vue';
+import myApp from 'TodoRouterDir/index.vue';
+// import myApp from 'TodoVuexDir/index.vue';
+// import myApp from 'VuexSample/index.vue';
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -125,32 +124,18 @@ new Vue({
 
 ```
 
-### `webpack.config.babel.js`
-
-33行目の`// historyApiFallback: true,`のコメントを外します。
-
 ## ESlintの有効化
 
 設定ファイルは`./.eslintrc`になります。
 
-### `webpack.config.babel.js`
+### `vite.config.js`
 
-44~50行目の下記のコメントを外します。
+18~2行目の下記のコメントを外します。
 
 ```javascript
-// {
-//   test: /\.(jsx?|vue)$/,
-//   enforce: 'pre',
-//   exclude: /node_modules/,
-//   loader: 'eslint-loader',
-//   options: { failOnError: false }
-// },
+// checker({
+//   eslint: {
+//     lintCommand: 'eslint "js/**/*.{js,vue}"'
+//   },
+// }),
 ```
-
-## APIの仕様
-
-### TODOの全件取得
-### TODOの1件取得
-### TODOの変更
-### TODOの削除（論理削除）
-### TODOの削除（物理削除）
