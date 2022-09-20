@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="wrapper">
     <div class="inner">
       <app-header />
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Header from 'TodoRouterDir/components/Header';
-import Footer from 'TodoRouterDir/components/Footer';
+import Header from 'TodoRouterDir/components/Header/index.vue';
+import Footer from 'TodoRouterDir/components/Footer/index.vue';
 
 export default {
   components: {

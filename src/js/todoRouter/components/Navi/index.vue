@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="todo__link">
     <router-link class="todo__link__item" to="/">すべて表示</router-link>
     <router-link class="todo__link__item" to="/incomplete">未完了のみ表示</router-link>

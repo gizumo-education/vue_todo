@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <ul class="todos__list">
     <app-list-item
       v-for="todo in todos"
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ListItem from '../ListItem';
+import ListItem from '../ListItem/index.vue';
 
 export default {
   components: {

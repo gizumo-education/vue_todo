@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <ul class="todos__list">
     <app-list-item
       v-for="todo in todos"
@@ -6,15 +6,15 @@
       :todo-title="todo.title"
       :todo-detail="todo.detail"
       :todo-completed="todo.completed"
-      @changeCompleted="$emit('changeCompleted', todo)"
-      @showEditor="$emit('showEditor', todo)"
-      @deleteTodo="$emit('deleteTodo', todo.id)"
+      @change-completed="$emit('change-completed', todo)"
+      @show-editor="$emit('show-editor', todo)"
+      @delete-todo="$emit('delete-todo', todo.id)"
     />
   </ul>
 </template>
 
 <script>
-import ListItem from 'TodoRouterDir/components/ListItem';
+import ListItem from 'TodoRouterDir/components/ListItem/index.vue';
 
 export default {
   components: {

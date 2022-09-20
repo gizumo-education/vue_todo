@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <app-wrapper :todos="todos">
     <app-navi />
     <app-register
@@ -7,8 +7,8 @@
       :todo-title.sync="targetTodo.title"
       :todo-detail.sync="targetTodo.detail"
       :todo-rows="rows"
-      @addTodo="addTodo"
-      @editTodo="editTodo"
+      @add-todo="addTodo"
+      @edit-todo="editTodo"
     />
     <!--
       :todo-title="targetTodo.title"
@@ -28,9 +28,9 @@
       <app-list
         v-if="filteredTodos.length"
         :todos="filteredTodos"
-        @changeCompleted="changeCompleted"
-        @showEditor="showEditor"
-        @deleteTodo="deleteTodo"
+        @change-completed="changeCompleted"
+        @show-editor="showEditor"
+        @delete-todo="deleteTodo"
       />
       <app-empty-message
         v-else
@@ -43,11 +43,11 @@
 <script>
 import axios from 'axios';
 
-import Wrapper from 'TodoRouterDir/components/Wrapper';
-import Navi from 'TodoRouterDir/components/Navi';
+import Wrapper from 'TodoRouterDir/components/Wrapper/index.vue';
+import Navi from 'TodoRouterDir/components/Navi/index.vue';
 import { ErrorMessage, EmptyMessage } from 'TodoRouterDir/components/Message';
-import Register from 'TodoRouterDir/components/Register';
-import List from 'TodoRouterDir/components/List';
+import Register from 'TodoRouterDir/components/Register/index.vue';
+import List from 'TodoRouterDir/components/List/index.vue';
 
 export default {
   components: {
@@ -91,7 +91,7 @@ export default {
     axios.get('http://localhost:3000/api/todos/').then(({ data }) => {
       this.todos = data.todos.reverse();
       this.setFilter();
-    }).catch((err) => {
+    }).catch(err => {
       this.showError(err);
       this.setFilter();
     });
@@ -142,35 +142,35 @@ export default {
         this.errorMessage = 'タイトルと内容はどちらも必須項目です。';
         return;
       }
-      const postTodo = Object.assign({}, {
+      const postTodo = {
         title: this.targetTodo.title,
         detail: this.targetTodo.detail,
-      });
+      };
       axios.post('http://localhost:3000/api/todos/', postTodo).then(({ data }) => {
         this.todos.unshift(data);
         this.targetTodo = this.initTargetTodo();
         this.hideError();
-      }).catch((err) => {
+      }).catch(err => {
         this.showError(err);
       });
     },
     changeCompleted(todo) {
       this.targetTodo = this.initTargetTodo();
-      const targetTodo = Object.assign({}, todo);
+      const targetTodo = { ...todo };
       axios.patch(`http://localhost:3000/api/todos/${targetTodo.id}`, {
         completed: !targetTodo.completed,
       }).then(({ data }) => {
-        this.todos = this.todos.map((todoItem) => {
+        this.todos = this.todos.map(todoItem => {
           if (todoItem.id === targetTodo.id) return data;
           return todoItem;
         });
         this.hideError();
-      }).catch((err) => {
+      }).catch(err => {
         this.showError(err);
       });
     },
     showEditor(todo) {
-      this.targetTodo = Object.assign({}, todo);
+      this.targetTodo = { ...todo };
     },
     editTodo() {
       const targetTodo = this.todos.find(todo => todo.id === this.targetTodo.id);
@@ -185,13 +185,13 @@ export default {
         title: this.targetTodo.title,
         detail: this.targetTodo.detail,
       }).then(({ data }) => {
-        this.todos = this.todos.map((todo) => {
+        this.todos = this.todos.map(todo => {
           if (todo.id === this.targetTodo.id) return data;
           return todo;
         });
         this.targetTodo = this.initTargetTodo();
         this.hideError();
-      }).catch((err) => {
+      }).catch(err => {
         this.showError(err);
       });
     },
@@ -200,7 +200,7 @@ export default {
       axios.delete(`http://localhost:3000/api/todos/${id}`).then(({ data }) => {
         this.todos = data.todos.reverse();
         this.hideError();
-      }).catch((err) => {
+      }).catch(err => {
         this.showError(err);
       });
     },

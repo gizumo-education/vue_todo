@@ -1,11 +1,11 @@
-<template lang="html">
+<template>
   <li :class="['todo__item', todoCompleted ? 'is-completed' : '']">
     <div class="todo__item__inner">
       <div class="todo__item__completed">
         <button
           class="todo__item__completed__btn"
           type="button"
-          @click="$emit('changeCompleted')"
+          @click="$emit('change-completed')"
         >
           <template v-if="todoCompleted">
             <span>完了</span>
@@ -23,14 +23,14 @@
         <button
           class="todo__item__btn__edit"
           type="button"
-          @click="$emit('showEditor')"
+          @click="$emit('show-editor')"
         >
           編集
         </button>
         <button
           class="todo__item__btn__delete"
           type="button"
-          @click="$emit('deleteTodo')"
+          @click="$emit('delete-todo')"
         >
           削除
         </button>

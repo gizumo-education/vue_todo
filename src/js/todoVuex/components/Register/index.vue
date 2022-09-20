@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <form class="register">
     <div class="register__input">
       <p class="register__input__title">やることのタイトル</p>

@@ -9,11 +9,11 @@ import Vue from 'vue';
 
 import '../scss/global.scss';
 
-import myApp from './first';
-// import myApp from 'TodoDir';
-// import myApp from 'TodoRouterDir';
-// import myApp from 'TodoVuexDir';
-// import myApp from 'VuexSample';
+import myApp from './first/index.vue';
+// import myApp from 'TodoDir/index.vue';
+// import myApp from 'TodoRouterDir/index.vue';
+// import myApp from 'TodoVuexDir/index.vue';
+// import myApp from 'VuexSample/index.vue';
 
 // Vue.use(VueRouter);
 // const router = new VueRouter({

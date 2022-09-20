@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <form class="register">
     <div class="register__input">
       <p class="register__input__title">やることのタイトル</p>
@@ -7,7 +7,7 @@
         name="title"
         placeholder="ここにTODOのタイトルを記入してください"
         :value="todoTitle"
-        @keyup="$emit('update:todoTitle', $event.target.value)"
+        @keyup="$emit('update:todo-title', $event.target.value)"
       >
       <!--
         :value="props名" => propsでvalueをバインド
@@ -21,7 +21,7 @@
         :rows="todoRows"
         placeholder="ここにTODOの内容を記入してください。"
         :value="todoDetail"
-        @keyup="$emit('update:todoDetail', $event.target.value)"
+        @keyup="$emit('update:todo-detail', $event.target.value)"
       />
     </div>
     <div class="register__submit">
@@ -29,7 +29,7 @@
         class="register__submit__btn"
         type="button"
         name="addButton"
-        @click="(todoId === null) ? $emit('addTodo') : $emit('editTodo')"
+        @click="(todoId === null) ? $emit('add-todo') : $emit('edit-todo')"
       >
         <template v-if="todoId === null">
           <span>登録する</span>
