@@ -2,7 +2,7 @@
 
 ## サンプル
 
-<a href="https://gizumo-inc.github.io/vue_todo/sample/" target="_blank">https://gizumo-inc.github.io/vue_todo/sample/</a>
+<a href="https://gizumo-education.github.io/vue_todo/sample/" target="_blank">https://gizumo-education.github.io/vue_todo/sample/</a>
 
 ※ サンプルは、下の「API用のサーバーの立ち上げ」をしないと正常に動きません。
 
