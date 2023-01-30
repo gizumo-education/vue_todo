@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.18.10",
     "@babel/register": "^7.18.9",
     "@vitejs/plugin-legacy": "^2.0.1",
+    "@vitejs/plugin-vue2": "^2.2.0",
     "autoprefixer": "^10.4.8",
     "core-js": "^3.25.0",
     "cross-env": "^7.0.3",
@@ -38,7 +39,6 @@
     "terser": "^5.14.2",
     "vite": "^3.0.8",
     "vite-plugin-checker": "^0.5.0",
-    "vite-plugin-vue2": "^2.0.1",
     "vue-template-compiler": "^2.7.8"
   },
   "volta": {
