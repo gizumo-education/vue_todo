@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { createVuePlugin } from 'vite-plugin-vue2';
+import vue from '@vitejs/plugin-vue2';
 import legacy from '@vitejs/plugin-legacy';
 import checker from 'vite-plugin-checker';
 
@@ -10,7 +10,7 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
-    createVuePlugin(),
+    vue(),
     legacy({
       targets: ['ie >= 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],

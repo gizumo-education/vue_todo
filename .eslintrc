@@ -48,7 +48,8 @@
         }
       }
     ],
-    "vue/custom-event-name-casing": ["error", "kebab-case"]
+    "vue/custom-event-name-casing": ["error", "kebab-case"],
+    "import/no-extraneous-dependencies": false
   },
   "env": {
     "browser": true,
